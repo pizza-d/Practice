@@ -5,3 +5,4 @@ def solve(n, m, a):
     print('remainder: ' + str(remainder))
 
 solve(5,7,(1,2,3,4,5))
+### remainder: 1
