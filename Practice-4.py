@@ -1,12 +1,10 @@
 ###Palindrome Free Strings
 ###not done
 
-def palindrome_free(num,test):
-    
+### version 1
+def palindrome_free(num,test):    
     max_count = 2 ** test.count('?')
-    result = combination([test],max_count)
-    print(result)
-        
+    result = combination([test],max_count)       
     c5 = []
     c6 = []
     for i in range(2 ** 5):
@@ -17,8 +15,6 @@ def palindrome_free(num,test):
         x = str(format(i,'b').zfill(6))
         if x == x[len(x)::-1]:
             c6.append(x)
-    print(c5)
-    print(c6)
     count = 0
     for i in result:
         for j in c5:
@@ -28,8 +24,7 @@ def palindrome_free(num,test):
         for j in c6:
             if i.find(j) > -1:
                 count += 1
-                break
-    
+                break    
     if count >= len(result):
         print('impossible')
     else:
