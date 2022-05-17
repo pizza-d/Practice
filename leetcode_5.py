@@ -15,12 +15,11 @@ class Solution:
             for i in range(ws_len):
                 st = i * w_len
                 t = tmp[st:st+w_len]
-                if t in clon:
-                    if i == ws_len - 1:
-                        res.append(times)
-                        times += 1
-                    else:
-                        clon.remove(t)
+                if i == ws_len - 1 and t in clon:
+                    res.append(times)
+                    times += 1
+                elif t in clon:
+                    clon.remove(t)
                 else:
                     times += 1
                     break
